@@ -1,0 +1,181 @@
+:root {
+  --accent-color: #03a9f4;
+  --black: #000000;
+  --dark-primary-color: #0288d1;
+  --default-primary-color: #03a9f4;
+  --divider-color: #bdbdbd;
+  --light-primary-color: #b3e5fc;
+  --primary-text-color: #212121;
+  --secondary-text-color: #757575;
+  --silver: silver;
+  --text-primary-color: #ffffff;
+  --white-smoke: whitesmoke;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#wrap {
+  height: 100%;
+}
+
+#wrap {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  font-family: Lato;
+  background: var(--white-smoke);
+}
+
+.modal {
+  max-width: 480px;
+  text-align: center;
+  margin: auto;
+}
+.modal header {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 8px 16px;
+  background: var(--black);
+  color: var(--text-primary-color);
+}
+.modal header .title {
+  font-size: 1rem;
+  line-height: 1;
+}
+.modal header .title.-sub {
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.modal article {
+  padding: 8px 16px;
+  background: var(--text-primary-color);
+  color: var(--secondary-text-color);
+  box-shadow: 0 4px 8px 2px rgba(0, 0, 0, 0.1);
+}
+
+.heading {
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: block;
+  text-align: left;
+  padding: 0 8px;
+  border-bottom: 2px solid var(--primary-text-color);
+}
+
+.wrap.-input {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  padding: 4px;
+}
+.wrap.-input input.input {
+  -webkit-box-flex: 1;
+  flex: 1;
+  padding: 8px;
+  margin: 8px;
+  font-family: Lato;
+  font-size: 1rem;
+  border: none;
+}
+.wrap.-input input.input:focus {
+  outline: none;
+}
+.wrap.-output #output {
+  display: block;
+  margin: 1rem;
+  font-family: monospace;
+  font-size: 1rem;
+}
+.wrap.-radios {
+  text-align: left;
+  padding: 4px;
+}
+
+.radios {
+  display: -webkit-box;
+  display: flex;
+  flex-flow: wrap;
+  margin: 8px;
+  border: none;
+  padding: 4px;
+}
+.radios .radio {
+  width: calc(100% / 3);
+  padding: 4px;
+}
+.radios .radio input[type="radio"] {
+  display: none;
+}
+.radios .radio input[type="radio"]:checked + label {
+  cursor: default;
+}
+.radios .radio input[type="radio"]:checked + label,
+.radios .radio input[type="radio"]:checked + label:hover {
+  background: var(--default-primary-color);
+}
+.radios .radio input[type="radio"]:checked + label:active {
+  -webkit-transform: none;
+  transform: none;
+}
+.radios .radio label {
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  position: relative;
+  text-align: center;
+  line-height: 1;
+  display: block;
+  width: 100%;
+  padding: 8px 24px;
+  background: var(--divider-color);
+  color: var(--text-primary-color);
+  -webkit-transition: background 0.25s;
+  transition: background 0.25s;
+}
+.radios .radio label:hover {
+  background: var(--primary-text-color);
+}
+.radios .radio label:active {
+  -webkit-transform: translateY(1px);
+  transform: translateY(1px);
+}
+
+a {
+  text-decoration: none;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+a:hover {
+  color: var(--default-primary-color);
+}
+
+.form__field {
+  width: 360px;
+  background: var(--text-primary-color);
+  color: var(--silver);
+  font: inherit;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+  border: 0;
+  outline: 0;
+  padding: 22px 18px;
+}

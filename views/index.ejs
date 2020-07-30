@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,700" />
+    <link rel="stylesheet" href="../css/styles.css" type="text/css">
+</head>
+
+<body>
+
+    <div id="wrap">
+        <div class="modal">
+            <header class="header">
+                <h1 class="title">Little</h1>
+                <h2 class="-sub title">URL Shortener</h2>
+            </header>
+            <article class="content">
+                <section class="wrap -input">
+                    <label class="heading" for="input">Input</label>
+                    <form action="/shortUrls" method="POST" id="form-shorten">
+                        <input required placeholder="Paste a URL to shorten" type="url" name="fullUrl" id="fullUrl"
+                            class="input" />
+                    </form>
+                </section>
+                <section class="wrap -radios">
+                    <label class="heading">Expiration</label>
+                    <form class="radios" name="expirationForm">
+                        <div class="radio">
+                            <input type="radio" name="expiration" id="radio-1-hour" checked="checked" />
+                            <label class="radio" for="radio-1-hour">1-hour</label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" name="expiration" id="radio-6-hours" />
+                            <label class="radio" for="radio-6-hours">6-hours</label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" name="expiration" id="radio-12-hours" />
+                            <label class="radio" for="radio-12-hours">12-hours</label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" name="expiration" id="radio-1-day" />
+                            <label class="radio" for="radio-1-day">1-day</label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" name="expiration" id="radio-1-week" />
+                            <label class="radio" for="radio-1-week">1-week</label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" name="expiration" id="radio-1-month" />
+                            <label class="radio" for="radio-1-month">1-month</label>
+                        </div>
+                    </form>
+                </section>
+                <% shortUrls.forEach(shortUrl => { %>
+                <section class="wrap -output"><span class="heading">Output</span><span id="output"><span>
+                            <a href="<%= shortUrl.full %>"><%- shortUrl.full %></a></span>
+                        <br><br>
+                        <a href="<%= shortUrl.short %>"><%- shortUrl.short %></a></span>
+                </section>
+
+                <% }) %>
+            </article>
+        </div>
+    </div>
+</body>
+
+</html>
