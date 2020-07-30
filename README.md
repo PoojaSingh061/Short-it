@@ -8,9 +8,9 @@
 ### Usage
 > Replace mongoURI in server.js with your mongodb key
 
-'''
+```
 npm install
 npm run devStart
 
 Go to: localhost:3000
-'''
+```
